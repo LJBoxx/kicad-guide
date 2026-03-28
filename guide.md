@@ -61,7 +61,7 @@ Okay that's nice I have an led on my sheet but now what else do i need ...? SOME
 
 ![alt text](image-11.png)
 
-Same thing as for parts drag and drop. I needed ground and Vcc (which means + voltage and vdd is the same for ground) 
+Same thing as for parts drag and drop. I needed ground and Vcc (which means + voltage and vss is the same but for ground) 
 
 ![alt text](image-20.png)
 
@@ -109,3 +109,24 @@ As for the capacitor and resistor it is the same symbol. You can edit the fields
 
 ![alt text](image-23.png)
 ![alt text](image-24.png)
+
+Alright my schematic is done here. I will now run the ERC (Electrical Rules Checker) to see if everything is wired correctly. 
+
+![alt text](image-26.png)
+
+Oh wow okay so ERC checks for how the pins are configured and well the symbol imported from easyeda didnt have them. It's not always necessary to fix them but as you get to more and more complex projects its good practice to do so in order to catch any mistakes (wrong wire input going into input and other stuff like so). So to fix these errors you will have to select the symbol and right click then properties (or just select and press e). If you dont understand anything in this part its fine. 
+
+![alt text](image-27.png)
+
+Okay now you have this window that opens. Press on "edit symbol" as we want to edit it.
+
+![alt text](image-28.png)
+
+Yep they are "unspecified".
+
+![alt text](image-30.png)
+
+Double click on one of them to edit it.
+
+![alt text](image-31.png)
+
