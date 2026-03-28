@@ -35,3 +35,68 @@ Name your project how you want it, it's not that relevant
 Once that's done, you will have a (project name).kicad_pcb and kicad_sch, these files contains the data of your pcb and your schematic.
 
 ![alt text](image-5.png)
+
+Now open the kicad_sch file that will be where you define how each component is wired to the others.
+
+![alt text](image-6.png)
+
+Okay now that is scarier than before but dont worry I'll break down the only parts you need.
+
+To place components you have to use this tool (or press a):
+![alt text](image-7.png)
+
+You can type out what components you need, for me I will use some LEDs 
+
+![alt text](image-8.png)
+
+Here is my led !
+
+![alt text](image-9.png)
+
+Once you press okay it will drag it and you can place it anywhere on the sheet.
+
+![alt text](image-10.png)
+
+Okay that's nice I have an led on my sheet but now what else do i need ...? SOME POWERRRR!!! For this you can use the Power symbol tool (p) on the toolbar just under place symbol tool 
+
+![alt text](image-11.png)
+
+Same thing as for parts drag and drop. I needed ground and Vcc (which means + voltage and vdd is the same for ground) 
+
+![alt text](image-20.png)
+
+To wire parts together, use the wire tool (w) or press on the small round dot on the pin.
+
+![alt text](image-19.png)
+![alt text](image-18.png)
+
+Once wired it looks like this and remember grounds point down and voltage points up.
+
+![alt text](image-12.png)
+
+Great now i have an led and I have defined where power and ground goes. Now i need to *actually* give it power either by wiring a battery or in my case i will have nfc on my card and there is an nfc chip that has an "energy harvest" output pin meaning I can get power from the nfc field that powers the chip !! The ic is the NT3H2111 from NXP semi
+
+![alt text](image-13.png)
+
+To find this part i will head to [LCSC](https://www.lcsc.com) and type the part reference to see what they have in stock. Also why lcsc you may ask ? Well they are usually the cheapest, and parts available on lcsc are also usually available for assembly by jlcpcb though in that case you want to use basic parts so that you wont have to pay the 3$/ part that's not a basic one in [their part library](https://jlcpcb.com/parts/in-stock-parts)
+
+![alt text](image-14.png)
+
+Bingo ! they have 3 packages in stock but if i look for the part in kicad... Well i cannot find it. that's why i will use [easyeda2kicad](https://github.com/uPesy/easyeda2kicad.py) in order to retrieve the part from easyeda (another editor but with jlc's library) and transfer it over to kicad. You should follow the instructions in the repo for installation.
+
+I have a hot air station at home which means I can solder the very small package but you should try to use the biggest one available since it will be wayy easier to solder. In this case you would pick the SO-8 package with the lcsc id C2654859
+
+The annoying part is actually figuring out how this chip work and I'd recommend going through the datasheet thoroughly and actually listing what you need. If the chip does not match what you need feel free to search for another chip. I'm actually in luck here because they provide an example schamtic :)
+
+![alt text](image-17.png)
+
+Now getting the part into kicad, the 3d model wasn't available. It's okay, we can fix it later and find a model afterwards
+![alt text](image-15.png)
+
+Here it is in kicad.
+
+![alt text](image-16.png)
+
+Okay so we know that vout will be between 2.2 and 3v and it need a capacitor of 150 to 200nf. We can now proceed to wire the antenna, led and capacitors. We wont limit the current going to the leds with a resistor (which if powered from a battery you would want to) because the supply is limited at 15ma max. I will add 3 more leds in parallel :)
+
+![alt text](image-22.png)
