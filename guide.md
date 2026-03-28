@@ -112,9 +112,11 @@ As for the capacitor and resistor it is the same symbol. You can edit the fields
 
 Alright my schematic is done here. I will now run the ERC (Electrical Rules Checker) to see if everything is wired correctly. 
 
+![alt text](image-33.png)
+
 ![alt text](image-26.png)
 
-Oh wow okay so ERC checks for how the pins are configured and well the symbol imported from easyeda didnt have them. It's not always necessary to fix them but as you get to more and more complex projects its good practice to do so in order to catch any mistakes (wrong wire input going into input and other stuff like so). So to fix these errors you will have to select the symbol and right click then properties (or just select and press e). If you dont understand anything in this part its fine. 
+Oh wow okay so ERC checks for how the pins are configured and well the symbol imported from easyeda didnt have them. It's not always necessary to fix them but as you get to more and more complex projects its good practice to do so in order to catch any mistakes (wrong wire input going into input and other stuff like so). So to fix these errors you will have to select the symbol and right click then properties (or just select and press e). If you dont understand anything in this part its fine, usually for your first projects its not too hard and you can ignore this part.
 
 ![alt text](image-27.png)
 
@@ -129,4 +131,20 @@ Yep they are "unspecified".
 Double click on one of them to edit it.
 
 ![alt text](image-31.png)
+
+Okay now i defined the pins, google and the datasheet are your friends here ! 
+
+![alt text](image-32.png)
+
+Hit control + S and close the tab then run the erc again. It should be all good but what ?? 
+
+![alt text](image-34.png)
+
+Actually for kicad, we have to tell it that the power comes from somewhere, here the ground so we have to add a "PWR_FLAG" to tell kicad that "Hey power comes from this part"
+
+![alt text](image-35.png)
+
+Its now all greennnnnn :DDDD
+
+We can move onto the next part : part assignment. Be ready to make back and forth between your browser and kicad lol
 
