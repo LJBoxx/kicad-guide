@@ -67,8 +67,8 @@ Same thing as for parts drag and drop. I needed ground and Vcc (which means + vo
 
 To wire parts together, use the wire tool (w) or press on the small round dot on the pin.
 
-![alt text](image-19.png)
 ![alt text](image-18.png)
+![alt text](image-19.png)
 
 Once wired it looks like this and remember grounds point down and voltage points up.
 
@@ -99,4 +99,13 @@ Here it is in kicad.
 
 Okay so we know that vout will be between 2.2 and 3v and it need a capacitor of 150 to 200nf. We can now proceed to wire the antenna, led and capacitors. We wont limit the current going to the leds with a resistor (which if powered from a battery you would want to) because the supply is limited at 15ma max. I will add 3 more leds in parallel :)
 
+By the way for any pins you dont use you should flag it with this tool (q) :
+
+![alt text](image-25.png)
+
 ![alt text](image-22.png)
+
+As for the capacitor and resistor it is the same symbol. You can edit the fields containing its value to whatever one you need. Here i have added an unpolarized capacitor and double click on the "C" to edit it. For resistor value you would put 5r for 5ohm and 5k1 for 5.1kilo ohm. You can put anything its just easier to read. As for capacitors its the same 5f for 5 farad (who uses that much capacitance wow) and 5n for 5 nanofarad / 5u for 5 microfarad and so on. Check out the [RKM](https://en.wikipedia.org/wiki/RKM_code#Part_value_code) wiki page !
+
+![alt text](image-23.png)
+![alt text](image-24.png)
